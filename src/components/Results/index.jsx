@@ -2,19 +2,19 @@ import { Container } from './styles'
 
 import { Cards } from '../Cards'
 
-export function Results(){
+export function Results({ data }){
   return (
     <>
       <Container>
-        <Cards title="Valor final bruto" value="15.509,27"/>
-        <Cards title="Alíquota de IR" value="20%"/>
-        <Cards title="Valor pago em IR" value="15.509,27"/>
+        <Cards title="Valor final bruto" value={data.valorFinalBruto}/>
+        <Cards title="Alíquota de IR" value={data.aliquotaIR}/>
+        <Cards title="Valor pago em IR" value={data.valorPagoIR}/>
       </Container>
 
       <Container>
-        <Cards title="Valor final Liquido" value="56.509,27" isLiquidValue={true}/>
-        <Cards title="Valor total investido" value="9.509,27"/>
-        <Cards title="Ganho Liquido" value="47.000,00" isLiquidValue={true}/>
+        <Cards title="Valor final Liquido" value={data.valorFinalLiquido} isLiquidValue={true}/>
+        <Cards title="Valor total investido" value={data.valorTotalInvestido}/>
+        <Cards title="Ganho Liquido" value={data.ganhoLiquido} isLiquidValue={true}/>
       </Container>
     </>
   )

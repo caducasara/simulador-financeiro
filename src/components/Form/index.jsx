@@ -9,13 +9,12 @@ import { InputButton } from './InputButton'
 import { Input } from './Input'
 
 
-export function Form(){
+export function Form({handleSimulation}){
 
   const formRef = useRef(null);
 
   const [initialCDI, setInitialCDI] = useState([])
   const [initialIPCA, setInitialIPCA] = useState([])
-  const [dataSimulation, setDataSimulation] = useState([])
 
 
   useEffect(async ()=> {
@@ -26,12 +25,17 @@ export function Form(){
     setInitialIPCA(response[1].valor)
   },[])
 
-  async function handleSimulation(indexacao, rendimento){
-    const data = await api.get(`simulacoes?tipoIndexacao=${indexacao}&tipoRendimento=${rendimento}`)
-    const response = data.data
+  /* Função ThatResetsForm serve para "limpar/redefinir" os campos com a tag "name"
+  ** aporteInicial, aporteMensal, prazoMeeses, rentabilidade, e também remover os erros que forem apresentados.*/
 
-    setDataSimulation(response)
+  function functionThatResetsForm() {
+    formRef.current.clearField('aporteInicial')
+    formRef.current.clearField('aporteMensal')
+    formRef.current.clearField('prazoMeses')
+    formRef.current.clearField('rentabilidade')
+    formRef.current.setErrors({})
   }
+
 
   async function handleSubmit(data) {
     try{
@@ -53,11 +57,8 @@ export function Form(){
 
       handleSimulation(dataSimulacao.indexacao, dataSimulacao.rendimento)
       
-      formRef.current.clearField('aporteMensal')
-      formRef.current.clearField('aporteInicial')
-      formRef.current.clearField('prazoMeses')
-      formRef.current.clearField('rentabilidade')
-      formRef.current.setErrors({})
+      functionThatResetsForm()
+      
       console.log(data)
     }catch (err) {
       if(err instanceof Yup.ValidationError){
@@ -70,14 +71,6 @@ export function Form(){
         formRef.current.setErrors(errorMessages)
       }
     }
-  }
-
-  function functionThatResetsForm() {
-    formRef.current.clearField('aporteInicial')
-    formRef.current.clearField('aporteMensal')
-    formRef.current.clearField('prazoMeses')
-    formRef.current.clearField('rentabilidade')
-    formRef.current.setErrors({})
   }
 
   return (
