@@ -24,7 +24,6 @@ export const WrapperRadioBox = styled.div`
   label {
     display: inline-block;
     text-align: center;
-    min-width: 90px;
     padding: 10px 20px;
     border: 1px solid #000;
     font-family: 'Font Awesome 5 Free', 'Roboto';

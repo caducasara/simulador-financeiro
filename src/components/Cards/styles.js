@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const ContainerCard = styled.div`
   padding: 0.5rem;
-  width: 200px;
+  min-width: 14rem;
   height: 80px;
   border-radius: 0.25rem;
   background-color: #f4f4f4;
@@ -23,5 +23,15 @@ export const ContainerCard = styled.div`
   p {
     color: ${props => (props.isLiquidValue ? 'green' : '#000')};
     font-weight: ${props => (props.isLiquidValue ? '700' : '400')};
+  }
+
+  @media (max-width: 768px) {
+    min-width: 0rem;
+    padding: 0.5rem 1.25rem;
+    justify-content: space-around;
+  }
+
+  @media (max-width: 425px) {
+    width: 100%;
   }
 `

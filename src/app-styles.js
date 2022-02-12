@@ -13,6 +13,11 @@ export const ContainerContent = styled.div`
   justify-content: space-between;
   width: 100%;
   padding: 40px 20px;
+
+  @media (max-width: 1024px) {
+    align-items: center;
+    flex-direction: column;
+  }
 `
 
 export const ContainerSimulador = styled.div`
@@ -26,6 +31,14 @@ export const ContainerSimulador = styled.div`
     font-weight: 700;
     margin-bottom: 1rem;
   }
+
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+
+  @media (max-width: 425px) {
+    padding: 0;
+  }
 `
 
 export const ContainerResults = styled.div`
@@ -38,5 +51,13 @@ export const ContainerResults = styled.div`
     font-size: 1.5em;
     font-weight: 700;
     margin-bottom: 1rem;
+  }
+
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+
+  @media (max-width: 425px) {
+    padding: 0;
   }
 `

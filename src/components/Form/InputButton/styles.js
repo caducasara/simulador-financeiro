@@ -18,6 +18,10 @@ export const ButtonContainer = styled.button`
     background: #ed8e53;
     color: #fff;
   }
+
+  @media (max-width: 425px) {
+    width: 100%;
+  }
 `
 export const ButtonContainerClear = styled.button`
   display: flex;
@@ -37,5 +41,9 @@ export const ButtonContainerClear = styled.button`
     background: #ed8e53;
     color: #fff;
     border-color: #ed8e53;
+  }
+
+  @media (max-width: 425px) {
+    width: 100%;
   }
 `

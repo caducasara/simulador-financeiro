@@ -8,6 +8,7 @@ export const HeaderContainer = styled.header`
   min-height: 80px;
 
   h1 {
+    text-align: center;
     font-size: 2rem;
     font-weight: 700;
   }

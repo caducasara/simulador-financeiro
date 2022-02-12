@@ -10,6 +10,10 @@ export const ContainerWrapper = styled.div`
   align-items: center;
   justify-content: space-around;
   margin: 40px 0;
+
+  @media (max-width: 425px) {
+    flex-direction: column;
+  }
 `
 export const WrapperInput = styled.div`
   display: flex;
@@ -21,5 +25,13 @@ export const WrapperInput = styled.div`
     font-size: 1rem;
     font-weight: 400;
     margin-bottom: 1rem;
+  }
+
+  @media (max-width: 425px) {
+    width: 100%;
+
+    & + & {
+      margin-top: 2rem;
+    }
   }
 `

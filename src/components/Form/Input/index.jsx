@@ -22,7 +22,7 @@ export function Input({title, name, isReadOnly, ...rest}){
         ref={inputRef}
         name={name}
         type='text'
-        maxW='200px'
+        maxW={['100%', '200px']}
         variant='flushed'
         borderColor={error ? '#f00' : 'black'}
         borderBottom='2px solid black'
