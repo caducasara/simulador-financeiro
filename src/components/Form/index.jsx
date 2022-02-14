@@ -13,21 +13,32 @@ export function Form({handleSimulation}){
 
   const formRef = useRef(null);
 
-  const [initialCDI, setInitialCDI] = useState([])
-  const [initialIPCA, setInitialIPCA] = useState([])
+  /**
+   * Estado initialCDI que é responsavel por armazenar os dados inicias de CDI e IPCA
+   */
+  const [initialCDIandIPCA, setInitialCDIandIPCA] = useState({})
 
-
+  /**
+   * useEffect responsavel por fazer um fetch na API logo quando o componente é carregado
+   * e salvar os dados da requisição no estado initialCDI, onde os valores serão utilizados para
+   * preencher os campos CDI e IPCA
+   */
   useEffect(async ()=> {
     const data = await api.get('indicadores')
     const response = data.data
 
-    setInitialCDI(response[0].valor)
-    setInitialIPCA(response[1].valor)
+    const initialValues = {
+      cdiValue: response[0].valor,
+      ipcaValue: response[1].valor
+    }
+
+    setInitialCDIandIPCA(initialValues)
   },[])
 
-  /* Função ThatResetsForm serve para "limpar/redefinir" os campos com a tag "name"
-  ** aporteInicial, aporteMensal, prazoMeeses, rentabilidade, e também remover os erros que forem apresentados.*/
-
+  /**
+   * Função ThatResetsForm serve para "limpar/redefinir" os campos com a tag "name"
+   * aporteInicial, aporteMensal, prazoMeeses, rentabilidade, e também remover os erros que forem apresentados.
+   */
   function functionThatResetsForm() {
     formRef.current.clearField('aporteInicial')
     formRef.current.clearField('aporteMensal')
@@ -36,9 +47,18 @@ export function Form({handleSimulation}){
     formRef.current.setErrors({})
   }
 
-
+  /**
+   * Função handleSubmit, função responsavel por realizar a verificação se os campos do formulário
+   * estão preendhidos corretamente, caso estejam preenchidos corretamente ela ira realizar o request
+   * na API bucando os valores da simulação desejada, caso contrário ira setar os erros nos campos do
+   * formulário e nao ira realizar o request.
+   */
   async function handleSubmit(data) {
     try{
+      /**
+       * Shema para os dados que serão informados nos campos do formulário, onde é informado o atributo 'name'
+       * do input que deseja validar, e lógo após é passado a validação que deseja para aquele campo.
+       */
       const schema = Yup.object().shape({
         aporteInicial: Yup.string().required('O campo é obrigatório.'),
         aporteMensal: Yup.number().typeError('Aporte deve ser um número').required('O campo é obrgatório'),
@@ -46,6 +66,11 @@ export function Form({handleSimulation}){
         rentabilidade: Yup.number().typeError('Rentabilidade deve ser um número').required('O campo é obrgatório')
       })
 
+      /**
+       * Método definido para que o YUP verifique todos os campos passados no schema e verifique se ele é
+       * valido ou não. É necessario passar este método pois o YUP por padrão quando encontra uma validação
+       * incoerente ele retorna este erro e nao verifica o restante.
+       */
       await schema.validate(data, {
         abortEarly: false
       })
@@ -58,8 +83,6 @@ export function Form({handleSimulation}){
       handleSimulation(dataSimulacao.indexacao, dataSimulacao.rendimento)
       
       functionThatResetsForm()
-      
-      console.log(data)
     }catch (err) {
       if(err instanceof Yup.ValidationError){
         const errorMessages = {}
@@ -88,7 +111,7 @@ export function Form({handleSimulation}){
 
         <ContainerWrapper>
           <WrapperInput>
-            <Input title="Aporte Inicial" name="aporteInicial" placeholder="R$" isReadOnly = {false}/>
+            <Input title="Aporte Inicial" name="aporteInicial" isReadOnly = {false}/>
           </WrapperInput>
           <WrapperInput>
             <Input title="Aporte Mensal" name="aporteMensal" isReadOnly = {false}/>
@@ -100,16 +123,16 @@ export function Form({handleSimulation}){
             <Input title="Prazo (em meses)" name="prazoMeses" isReadOnly = {false}/>
           </WrapperInput>
           <WrapperInput>
-            <Input title="Rentabilidade" name="rentabilidade" placeholder="%" isReadOnly = {false}/>
+            <Input title="Rentabilidade" name="rentabilidade" isReadOnly = {false}/>
           </WrapperInput>
         </ContainerWrapper>
 
         <ContainerWrapper>
           <WrapperInput>
-            <Input title="IPCA (ao ano)" name="ipca" value={`${initialIPCA}%`} isReadOnly = {true}/>
+            <Input title="IPCA (ao ano)" name="ipca" value={`${initialCDIandIPCA.ipcaValue}%`} isReadOnly = {true}/>
           </WrapperInput>
           <WrapperInput>
-            <Input title="CDI (ao ano)" name="cdi" value={`${initialCDI}%`} isReadOnly = {true}/>
+            <Input title="CDI (ao ano)" name="cdi" value={`${initialCDIandIPCA.cdiValue}%`} isReadOnly = {true}/>
           </WrapperInput>
         </ContainerWrapper>
 

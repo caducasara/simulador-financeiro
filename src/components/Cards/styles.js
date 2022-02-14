@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 export const ContainerCard = styled.div`
-  padding: 0.5rem;
+  padding: 0.5rem 1.25rem;
   min-width: 14rem;
-  height: 80px;
+  height: 85px;
   border-radius: 0.25rem;
   background-color: #f4f4f4;
   -webkit-box-shadow: 0px 0px 10px -6px #000000;
