@@ -4,15 +4,16 @@ App de simulação de investimentos utilizando React e consumindo uma API extern
 # Resumo da Aplicação
 A aplicação consiste em um simulador financeiro onde o usuário pode fornecer alguns dados como tipo de rendimento e tipo de indexação que deseja, aporte inicial, aporte mensal, prazo que deseja (em meses) e a rentabilidade. Os campos de IPCA e CDI sao preenchidos automaticamente pela API externa.
 </br>
-### Tela inicial da aplicação:
+## Tela inicial da aplicação:
 [![1print.png](https://s10.gifyu.com/images/1print.png)](https://gifyu.com/image/Sz4TT)
 
 </br>
 
-### Simulação de investimento
+## Simulação de investimento
 [![Simulador-Financeiro.gif](https://s10.gifyu.com/images/Simulador-Financeiro.gif)](https://gifyu.com/image/Sz4Nt)
 
 </br>
+
 # Como Utilizar a API Externa?
 A API é fornecida pela EQUI Investimentos, para a realização deste teste.</br>
 Ela pode ser encontrada no Link abaixo com a documentação de como dever ser exacutada para poder ser consumida.</br>
