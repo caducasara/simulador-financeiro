@@ -26,3 +26,7 @@ Recomendo que primeiro a API seja executada para que depois execute esta aplica�
 * Faça o clone deste repositótio na sua maquina e dentro da pasta do projeto execute os comandos `npm install` ou `yarn` para instalar todas as dependênncias do projeto.</br>
 * Após ter concluido a instalação das dependências, ainda na pasta do projeto execute o comando `npm run dev` ou `yarn dev` para executar a aplicação.</br>
 * Com a aplicação em execução ela podera ser acessada atravé da URL `http://localhost:3001`.
+</br>
+
+# OBS:
+É importante que primeiro execute o servidor da API para depois executar esta aplicação, pois e API esta setada para executar na porta 3000 e o react por padrão utiliza a porta 3000 também. Neste caso ao Executar a API primeiro e depois o projeto com React o projeto com React vai mudar para a Porta 3001 e a API vai contunuar na 3000.
