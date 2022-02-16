@@ -16,7 +16,7 @@ A aplicação consiste em um simulador financeiro onde o usuário pode fornecer 
 
 ## Tela com uma Simulação:
 
-[![test89b586091fcdf1f3.png](https://s10.gifyu.com/images/test89b586091fcdf1f3.png)](https://gifyu.com/image/Szjoa)
+[![test0e0eac6ecb587814.png](https://s10.gifyu.com/images/test0e0eac6ecb587814.png)](https://gifyu.com/image/Szj1o)
 
 </br>
 
