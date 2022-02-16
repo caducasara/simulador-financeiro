@@ -61,9 +61,9 @@ export function Form({handleSimulation}){
        */
       const schema = Yup.object().shape({
         aporteInicial: Yup.string().required('O campo é obrigatório.'),
-        aporteMensal: Yup.number().typeError('Aporte deve ser um número').required('O campo é obrgatório'),
-        prazoMeses: Yup.number().typeError('Apenas o numero de meses').required('O campo é obrgatório'),
-        rentabilidade: Yup.number().typeError('Rentabilidade deve ser um número').required('O campo é obrgatório')
+        aporteMensal: Yup.number().typeError('Aporte deve ser um número').required('O campo é obrigatório'),
+        prazoMeses: Yup.number().typeError('Apenas o numero de meses').required('O campo é obrigatório'),
+        rentabilidade: Yup.number().typeError('Rentabilidade deve ser um número').required('O campo é obrigatório')
       })
 
       /**
