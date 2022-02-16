@@ -14,12 +14,6 @@ A aplicação consiste em um simulador financeiro onde o usuário pode fornecer 
 
 </br>
 
-## Simulação de investimento
-
-[![Simulador-Financeiro6cbf6bb109bd9538.gif](https://gifyu.com/image/Szjt2)
-
-</br>
-
 # Como Utilizar a API Externa?
 
 A API é fornecida pela EQUI Investimentos, para a realização deste teste.</br>
