@@ -12,14 +12,14 @@ export function RadioBox({title, type,  options}){
   const inputRef = useRef([])
 
   /**
-   * Desestruturação de métodos de dentro da biblioteca unform usando o hook useField.
+   * Desestruturação de métodos da biblioteca unform usando o hook useField.
    */
   const { fieldName, registerField } = useField(type)
 
 
   /**
-   * useEffect executando o método registerField que vem de dentro do Unform, onde aqui ele esta selecionando
-   * o boxRadio que esta selecionado e pegando o "value" dele para ser usado no "data" do formulário.
+   * useEffect executando o método registerField, onde ele seleciona
+   * o boxRadio selecionado e pega o seu "value" para ser usado no "data" do formulário.
    */
   useEffect(()=> {
     registerField({

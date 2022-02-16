@@ -11,13 +11,12 @@ export function Input({title, name, isReadOnly, ...rest}){
   const inputRef = useRef(null)
 
   /**
-   * Desestruturação de métodos de dentro da biblioteca unform usando o hook useField.
+   * Desestruturação de métodos da biblioteca unform usando o hook useField.
    */
   const { fieldName, registerField, defaultValue, error } = useField(name)
 
   /**
-   * useEffect executando o método registerField que vem de dentro do Unform, onde ele basicamente serve
-   * para informar que o input faz parte do formulário.
+   * useEffect executando o método registerField, indicando que o input faz parte do formulário.
    */
   useEffect(()=> {
     registerField({

@@ -10,15 +10,14 @@ import { ContainerMain, ContainerContent, ContainerSimulador, ContainerResults }
 function App() {
 
   /**
-   * Estado dataSimulation que ira armazenar os dados da simulação buscados na api refenrente a requisição feita,
-   * os mesmo dados armazenados neste estado serão utilizados para serem exibidos para o usuário.
+   * Estado dataSimulation que armazena os dados retornados da simulação referente a requisição feita na API.
    */
   const [dataSimulation, setDataSimulation] = useState({})
 
   /**
-   * Função handleSimulation, é a função que recebe dois parametros por padrão, o rendimento e a indexação,
+   * Função handleSimulation, função que recebe dois parametros por padrão, rendimento e indexação,
    * quando invocada realiza um fetch passando a indexação e rendimento como parametros e retorna uma resposta
-   * que é armazenada no estado dataSimulation, que guarda os dados da simulação.
+   * que é armazenada no estado dataSimulation.
    */
   async function handleSimulation(indexacao, rendimento){
     const data = await api.get(`simulacoes?tipoIndexacao=${indexacao}&tipoRendimento=${rendimento}`)

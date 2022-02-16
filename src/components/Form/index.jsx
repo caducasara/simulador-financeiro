@@ -19,9 +19,8 @@ export function Form({handleSimulation}){
   const [initialCDIandIPCA, setInitialCDIandIPCA] = useState({})
 
   /**
-   * useEffect responsavel por fazer um fetch na API logo quando o componente é carregado
-   * e salvar os dados da requisição no estado initialCDI, onde os valores serão utilizados para
-   * preencher os campos CDI e IPCA
+   * useEffect responsavel por fazer um fetch na API quando o componente é carregado
+   * e salvar os dados da requisição no estado initialCDI
    */
   useEffect(async ()=> {
     const data = await api.get('indicadores')
