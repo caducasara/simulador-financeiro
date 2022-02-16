@@ -34,7 +34,7 @@ Recomendo que primeiro a API seja executada para que depois execute esta aplica�
 - Recharts: Biblioteca utilizada para implementar o gráfico do valosres com e sem aporte.
   </br>
 
-# Como executar está aplicação?
+# Como executar esta aplicação?
 
 - Faça o clone deste repositótio na sua maquina e dentro da pasta do projeto execute os comandos `npm install` ou `yarn` para instalar todas as dependênncias do projeto.</br>
 - Após ter concluido a instalação das dependências, ainda na pasta do projeto execute o comando `npm run dev` ou `yarn dev` para executar a aplicação.</br>
