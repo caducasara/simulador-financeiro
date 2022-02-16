@@ -16,7 +16,7 @@ A aplicação consiste em um simulador financeiro onde o usuário pode fornecer 
 
 ## Simulação de investimento
 
-[![Simulador-Financeiro.gif](https://s10.gifyu.com/images/Simulador-Financeiro.gif)](https://gifyu.com/image/Sz4Nt)
+[![Simulador-Financeiro6cbf6bb109bd9538.gif](https://gifyu.com/image/Szjt2)
 
 </br>
 
