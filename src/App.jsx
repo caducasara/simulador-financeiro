@@ -36,7 +36,7 @@ function App() {
             <Form handleSimulation={handleSimulation}/>
         </ContainerSimulador>
 
-        {dataSimulation.valorFinalBruto != undefined && (
+        {dataSimulation.valorFinalBruto && (
           <ContainerResults>
             <h2>Resultado da Simulação</h2>
             <Results data={dataSimulation}/>

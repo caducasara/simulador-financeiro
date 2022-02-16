@@ -1,6 +1,7 @@
 import { Container } from './styles'
 
 import { Cards } from '../Cards'
+import { Chart } from '../Chart'
 
 export function Results({ data }){
   return (
@@ -15,6 +16,9 @@ export function Results({ data }){
         <Cards title="Valor final Liquido" value={data.valorFinalLiquido} isLiquidValue={true}/>
         <Cards title="Valor total investido" value={data.valorTotalInvestido}/>
         <Cards title="Ganho Liquido" value={data.ganhoLiquido} isLiquidValue={true}/>
+      </Container>
+      <Container>
+        <Chart data={data.graficoValores}/>
       </Container>
     </>
   )

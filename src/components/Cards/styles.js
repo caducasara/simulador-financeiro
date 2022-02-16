@@ -26,9 +26,8 @@ export const ContainerCard = styled.div`
   }
 
   @media (max-width: 768px) {
-    min-width: 0rem;
+    min-width: 12rem;
     padding: 0.5rem 1.25rem;
-    justify-content: space-around;
   }
 
   @media (max-width: 425px) {

@@ -37,6 +37,7 @@ Recomendo que primeiro a API seja executada para que depois execute esta aplica�
 - Unform: Unform é uma biblioteca externa que foi utilizada para que os dados do formulário fossem controlados pelo próprio DOM (uncontrolled-form), visando uma possivel melhoria na aplicação onde futuramente pode ser enviados mais dados nos requests e dessa maneira ja teria uma estrutura pronta para isso.
 - Chakra-UI: Chakra-UI é uma biblioteca de componentes do React que facilita a construção da IU de um aplicativo ou site, ela foi utilizada para a construção dos campos do formulario de uma forma mas pratica e facil para oferecer mais flexibilidadee em casos de manutenção e oferecer uma interface mais agradavel.
 - YUP: O YUP foi uma biblioteca utilizada para fazer a validação dos campos do formúlario de uma forma rapida e prática e que para esta ocasião funcionaria perfeitamente.
+- Recharts: Biblioteca utilizada para implementar o gráfico do valosres com e sem aporte.
   </br>
 
 # Como executar está aplicação?
