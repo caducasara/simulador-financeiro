@@ -25,7 +25,7 @@ A aplicação consiste em um simulador financeiro onde o usuário pode fornecer 
 A API é fornecida pela EQUI Investimentos, para a realização deste teste.</br>
 Ela pode ser encontrada no Link abaixo com a documentação de como dever ser exacutada para poder ser consumida.</br>
 Recomendo que primeiro a API seja executada para que depois execute esta aplicação.</br>
-<a href="https://github.com/eqi-investimentos/desafio-fake-api">Clique aqui para acessar a API</a>
+<a href="https://github.com/eqi-investimentos/desafio-fake-api" target="_blank">Clique aqui para acessar a API</a>
 
 </br>
 
